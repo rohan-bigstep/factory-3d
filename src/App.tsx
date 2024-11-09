@@ -8,8 +8,10 @@ import { Ground } from './rtf-components/Ground';
 //import { Model } from './components/MyChair'
 import { Model } from './rtf-components/ALCB';
 import { Configurator } from './components/Configurator';
-import { Loader } from './rtf-components/Loader';
+// import { Loader } from './components/loader/Loader';
 import { useControls } from 'leva';
+import { Loader3d } from './rtf-components/Loader3d';
+import Loader from './components/loader/Loader';
 
 function ProductConfigurator() {
 
@@ -24,10 +26,10 @@ function ProductConfigurator() {
 				maxDistance={50} // Maximum zoom-out distance
 				enablePan={false} // Disable panning if only zoom and rotation are needed
 			/>
-			<ambientLight intensity={0.3} />
+			<ambientLight intensity={0.5} />
 			<directionalLight visible={true} position={[1.0, 1.0, -7.0]} castShadow={true} />
 			<Sky distance={450000} sunPosition={[5, 1, 8]} inclination={0} azimuth={0.25} />
-			<Suspense fallback={<Loader />}>
+			<Suspense fallback={<Loader3d />}>
 				<Model />
 			</Suspense>
 			<Ground />
@@ -37,7 +39,7 @@ function ProductConfigurator() {
 
 function App() {
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
+		<Suspense fallback={<Loader/>}>
 			<Canvas camera={{ position: [20, 120, -235] }} shadows>
 				<ProductConfigurator />
 			</Canvas>
