@@ -18,7 +18,7 @@ export function Model(props: any) {
 
 	// Use useMemo to only set shadows on initial load.
 	useMemo(() => {
-		gltf.scene.traverse((node) => {
+		gltf.scene.traverse((node:any) => {
 			if (node?.isMesh) {
 				node.castShadow = true;
 			}
