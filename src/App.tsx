@@ -17,7 +17,7 @@ function ProductConfigurator() {
 
 	return (
 		<>
-			<FlyControls autoForward={false} dragToLook={false} movementSpeed={10} rollSpeed={0.005} makeDefault />
+			{/* <FlyControls autoForward={false} dragToLook={false} movementSpeed={10} rollSpeed={0.005} makeDefault /> */}
 			<OrbitControls
 				target={[0, 0.5, 0]} // Centered based on the model's bounding box
 				maxPolarAngle={Math.PI / 2}

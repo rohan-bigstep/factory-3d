@@ -58,7 +58,7 @@ export function Ground() {
 
 	return (
 		<mesh rotation-x={-Math.PI * 0.5} receiveShadow>
-			<planeGeometry args={[300, 200, 20, 20]} />
+			<planeGeometry args={[300, 200, 50, 50]} />
 			<GroundMaterial />
 		</mesh>
 	);
